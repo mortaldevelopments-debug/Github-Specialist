@@ -1,0 +1,42 @@
+{
+    // ── GitLens workspace settings ────────────────────────────────────────────
+
+    // Inline blame: show the last commit author + message next to each line
+    "gitlens.currentLine.enabled": true,
+    "gitlens.currentLine.format": "${author}, ${agoOrDate} · ${message}",
+
+    // Blame annotations in the gutter (toggle with Ctrl+Shift+G B)
+    "gitlens.blame.highlight.enabled": true,
+
+    // Code-lens above functions/classes: show the most-recent commit + authors
+    "gitlens.codeLens.enabled": true,
+    "gitlens.codeLens.recentChange.enabled": true,
+    "gitlens.codeLens.authors.enabled": true,
+
+    // Heatmap in the scrollbar – warmer = more recently changed
+    "gitlens.heatmap.enabled": true,
+    "gitlens.heatmap.location": "right",
+
+    // Commit Graph panel (GitLens Pro / free tier)
+    "gitlens.graph.layout": "editor",
+
+    // Show the GitLens side-bar panel on startup
+    "gitlens.views.commits.showBranchComparison": "branch",
+
+    // File History and Line History views
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
+
+    // Status-bar item: click to open full commit details
+    "gitlens.statusBar.enabled": true,
+    "gitlens.statusBar.format": "${author} · ${agoOrDate}",
+
+    // Hovers: show rich commit details when hovering over blame annotations
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.hovers.annotations.enabled": true,
+
+    // Always use the terminal integrated in VS Code for Git operations
+    "git.terminalAuthentication": true,
+    "git.enableSmartCommit": true,
+    "git.autofetch": true
+}

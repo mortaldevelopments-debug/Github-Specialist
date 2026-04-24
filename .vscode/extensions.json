@@ -1,0 +1,7 @@
+{
+    // Recommended extensions for this workspace.
+    // VS Code will prompt you to install any that are missing when you open this folder.
+    "recommendations": [
+        "eamodio.gitlens"
+    ]
+}

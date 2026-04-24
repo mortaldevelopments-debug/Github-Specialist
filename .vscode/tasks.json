@@ -1,0 +1,64 @@
+{
+    // Manual-only tasks. None of these run automatically on folder open.
+    // To run: Ctrl+Shift+P → "Tasks: Run Task" → choose a task below.
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Security Audit (Report Only)",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy", "RemoteSigned",
+                "-File", "${workspaceFolder}\\security-audit.ps1",
+                "-ReportOnly"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "focus": true
+            },
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "default"
+            }
+        },
+        {
+            "label": "Run Security Audit (Quick Scan)",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy", "RemoteSigned",
+                "-File", "${workspaceFolder}\\security-audit.ps1",
+                "-QuickScan"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "focus": true
+            },
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "default"
+            }
+        },
+        {
+            "label": "Run Security Audit (Full Scan)",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy", "RemoteSigned",
+                "-File", "${workspaceFolder}\\security-audit.ps1",
+                "-FullScan"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "focus": true
+            },
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "default"
+            }
+        }
+    ]
+}

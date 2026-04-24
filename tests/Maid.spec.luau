@@ -5,7 +5,8 @@
 --- Run inside Roblox Studio with a TestEZ runner.
 
 return function()
-    local Maid = require(script.Parent.Parent.Modules.Maid)
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local Maid = require(ReplicatedStorage.Modules.Maid)
 
     describe("Maid.new", function()
         it("should return a maid object", function()

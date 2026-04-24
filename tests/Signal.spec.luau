@@ -9,7 +9,8 @@
 ---   2. Require TestEZ and call `TestEZ.TestBootstrap:run({ script })`.
 
 return function()
-    local Signal = require(script.Parent.Parent.Modules.Signal)
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local Signal = require(ReplicatedStorage.Modules.Signal)
 
     describe("Signal.new", function()
         it("should return a signal object", function()

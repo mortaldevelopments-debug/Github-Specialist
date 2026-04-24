@@ -16,6 +16,12 @@
                 "$className": "StarterPlayerScripts",
                 "$path": "src/client"
             }
+        },
+        "ServerStorage": {
+            "$className": "ServerStorage",
+            "Tests": {
+                "$path": "tests"
+            }
         }
     }
 }

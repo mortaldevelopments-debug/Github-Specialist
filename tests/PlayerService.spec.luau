@@ -8,7 +8,8 @@
 --- (coin validation, level computation) using a stub PlayerData object.
 
 return function()
-    local PlayerService = require(script.Parent.Parent.Services.PlayerService)
+    local ServerScriptService = game:GetService("ServerScriptService")
+    local PlayerService = require(ServerScriptService.Services.PlayerService)
 
     -- Build a minimal fake Player object for testing purposes.
     local function makeFakePlayer(userId: number, displayName: string): Player

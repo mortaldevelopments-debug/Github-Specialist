@@ -105,7 +105,7 @@ $report = [ordered]@{
     DefenderScan   = $null
     StartupItems   = @()
     ScheduledTasks = @()
-    NonMsSServices  = @()
+    NonMsServices   = @()
     HighCpuProcesses = @()
     HighRamProcesses = @()
     Errors         = @()
@@ -305,7 +305,6 @@ try {
                 catch { }
             }
             $_ | Add-Member -NotePropertyName Publisher -NotePropertyValue $publisher -PassThru
-            $_
         } |
         Where-Object { $_.Publisher -notlike '*Microsoft*' } |
         ForEach-Object {
@@ -318,11 +317,11 @@ try {
             }
         }
 
-    $report.NonMsSServices = @($services)
+    $report.NonMsServices = @($services)
     $services | ForEach-Object {
         $txtLines.Add("[Service] $($_.DisplayName)  |  $($_.PathName)  |  Publisher: $($_.Publisher)")
     }
-    Write-Host "Found $($report.NonMsSServices.Count) running non-Microsoft service(s)." -ForegroundColor White
+    Write-Host "Found $($report.NonMsServices.Count) running non-Microsoft service(s)." -ForegroundColor White
 }
 catch {
     $report.Errors += "Services read failed: $($_.Exception.Message)"
@@ -412,7 +411,7 @@ catch {
 Write-Header "Audit Complete"
 Write-Host "Startup items  : $($report.StartupItems.Count)"  -ForegroundColor White
 Write-Host "Scheduled tasks: $($report.ScheduledTasks.Count)" -ForegroundColor White
-Write-Host "Services       : $($report.NonMsSServices.Count)"  -ForegroundColor White
+Write-Host "Services       : $($report.NonMsServices.Count)"  -ForegroundColor White
 Write-Host "High RAM procs : $($report.HighRamProcesses.Count)" -ForegroundColor White
 if ($report.Errors.Count -gt 0) {
     Write-Host "Errors         : $($report.Errors.Count) (see report for details)" -ForegroundColor Red

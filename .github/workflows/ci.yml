@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "copilot/**"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-format:
+    name: Lint & Format
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install aftman (Roblox toolchain manager)
+        uses: ok-nik/setup-aftman@v1.1.0
+
+      - name: Install project tools via aftman
+        run: aftman install
+
+      - name: Check formatting with StyLua
+        run: stylua --check src/ tests/
+
+      - name: Lint with Selene
+        run: selene src/ tests/
